@@ -5,12 +5,14 @@
 package chapter2_WeatherStation;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
  * @author dean
  */
-public class WeatherData 
+public class WeatherData extends Observable
 implements Subject
 {
     private ArrayList observers;
@@ -18,40 +20,14 @@ implements Subject
     private float humidity;
     private float pressure;
     
-    public WeatherData()
+    public WeatherData() 
     {
-        observers = new ArrayList();
-    }
-    
-    @Override
-    public void registerObserver(Observer o)
-    {
-        observers.add(o);
-    }
-
-    @Override
-    public void removeObserver(Observer o)
-    {
-        int i = observers.indexOf(o);
         
-        if (i >= 0)
-        {
-            observers.remove(i);
-        }
     }
-
-    @Override
-    public void notifyObservers()
-    {
-        for (int i = 0; i < observers.size(); i++)
-        {
-            Observer observer = (Observer)observers.get(i);
-            observer.update(temperature, humidity, pressure);
-        }
-    }
-    
+   
     public void measurementsChanged()
     {
+        setChanged();
         notifyObservers();
     }
     
@@ -64,5 +40,20 @@ implements Subject
         this.pressure = pressure;
         
         measurementsChanged();
+    }
+
+    float getTemperature()
+    {
+        return temperature;
+    }
+
+    float getHumidity()
+    {
+        return humidity;
+    }
+
+    float getPressure()
+    {
+        return pressure;
     }
 }
