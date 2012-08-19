@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter1;
+package chapter1_MiniDuckSimulator;
 
 /**
  *
  * @author dean
  */
-public class Duck
+public class MiniDuckSimulator
 {
 
     /**
@@ -16,6 +16,9 @@ public class Duck
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
+        Duck mallard = new MallardDuck();
+        
+        mallard.performQuack();
+        mallard.performFly();
     }
 }
