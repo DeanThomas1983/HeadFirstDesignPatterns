@@ -8,7 +8,7 @@ package chapter4_TheFactoryPattern;
  *
  * @author dean
  */
-class NYStyleClamPizza extends ClamPizza {
+class NYStyleClamPizza extends Pizza {
 
     public NYStyleClamPizza() {
     }

@@ -4,18 +4,47 @@
  */
 package chapter4_TheFactoryPattern;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author dean
  */
 abstract class Pizza {
-
-    public abstract void prepare();
-
-    public abstract void bake();
-
-    public abstract void cut();
-
-    public abstract void box();
+    String name;
+    String dough;
+    String sauce;
+    ArrayList toppings = new ArrayList();
     
+    void prepare()
+    {
+        System.out.println("Preparing " + name);
+        System.out.println("Tossing dough...");
+        System.out.println("Adding sauce...");
+        System.err.println("Adding toppings: ");
+        for (int i = 0; i < toppings.size(); i++)
+        {
+            System.out.println(toppings.get(i));
+        }
+    }
+
+    void bake()
+    {
+        System.out.println("Bake for 25 minutes at 350F");
+    }
+
+    void cut()
+    {
+        System.out.println("Cutting pizza into slices");
+    }
+
+    void box()
+    {
+        System.out.println("Place pizza in official PizzaStore box");
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
 }
