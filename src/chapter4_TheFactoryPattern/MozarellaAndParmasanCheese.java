@@ -8,9 +8,9 @@ package chapter4_TheFactoryPattern;
  *
  * @author dean
  */
-class ChicagoStylePepperoniPizza extends Pizza {
+class MozarellaAndParmasanCheese extends Cheese {
 
-    public ChicagoStylePepperoniPizza() {
+    public MozarellaAndParmasanCheese() {
     }
     
 }

@@ -9,28 +9,20 @@ package chapter4_TheFactoryPattern;
  * @author dean
  */
 class ClamPizza extends Pizza {
-
-    public ClamPizza() {
-    }
-
-    @Override
-    public void prepare() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void bake() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void cut() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void box() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    PizzaIngredientFactory ingredientFactory;
     
+    public ClamPizza(PizzaIngredientFactory ingredientFactory) 
+    {
+        this.ingredientFactory = ingredientFactory;
+    }
+
+    @Override
+    void prepare()
+    {
+        System.err.println("Preparing " + name);
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
+        cheese = ingredientFactory.createCheese();
+        clams = ingredientFactory.createClams();
+    }
 }

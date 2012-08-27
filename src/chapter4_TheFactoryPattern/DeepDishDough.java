@@ -8,9 +8,9 @@ package chapter4_TheFactoryPattern;
  *
  * @author dean
  */
-class NYStyleVeggiePizza extends Pizza {
+class DeepDishDough extends Dough {
 
-    public NYStyleVeggiePizza() {
+    public DeepDishDough() {
     }
     
 }

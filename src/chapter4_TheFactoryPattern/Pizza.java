@@ -10,23 +10,16 @@ import java.util.ArrayList;
  *
  * @author dean
  */
-abstract class Pizza {
+public abstract class Pizza {
     String name;
-    String dough;
-    String sauce;
-    ArrayList toppings = new ArrayList();
+    Dough dough;
+    Sauce sauce;
+    Veggies veggies[];
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Clams clams;
     
-    void prepare()
-    {
-        System.out.println("Preparing " + name);
-        System.out.println("Tossing dough...");
-        System.out.println("Adding sauce...");
-        System.err.println("Adding toppings: ");
-        for (int i = 0; i < toppings.size(); i++)
-        {
-            System.out.println(toppings.get(i));
-        }
-    }
+    abstract void prepare();
 
     void bake()
     {
@@ -46,5 +39,16 @@ abstract class Pizza {
     public String getName()
     {
         return name;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return "";
+    }
+
+    void setName(String name) 
+    {
+        this.name = name;
     }
 }

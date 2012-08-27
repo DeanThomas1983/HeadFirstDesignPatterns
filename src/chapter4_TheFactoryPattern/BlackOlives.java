@@ -8,9 +8,9 @@ package chapter4_TheFactoryPattern;
  *
  * @author dean
  */
-class ChicagoStyleClamPizza extends Pizza {
+class BlackOlives extends Veggies {
 
-    public ChicagoStyleClamPizza() {
+    public BlackOlives() {
     }
     
 }

@@ -4,13 +4,14 @@
  */
 package chapter4_TheFactoryPattern;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author dean
  */
-class Veggies
+class Spinach extends Veggies
 {
+
+    public Spinach() {
+    }
     
 }

@@ -10,29 +10,34 @@ package chapter4_TheFactoryPattern;
  */
 public class NYPizzaStore extends PizzaStore 
 {
-
     @Override
-    Pizza createPizza(String type) {
+    protected Pizza createPizza(String type) 
+    {
+        Pizza pizza = null;
+        PizzaIngredientFactory ingredientFactory = 
+                new NYPizzaIngredientFactory();
+    
         if (type.equals("cheese"))
         {
-            return new NYStyleCheesePizza();
+            pizza = new CheesePizza(ingredientFactory);
+            pizza.setName("New York Style Cheese Pizza");
         }
         else if (type.equals("pepperoni"))
         {
-            return new NYStylePepperoniPizza();
+            pizza = new PepperoniPizza(ingredientFactory);
+            pizza.setName("New York Style Pepperoni Pizza");
         }
         else if (type.equals("clam"))
         {
-            return new NYStyleClamPizza();
+            pizza = new ClamPizza(ingredientFactory);
+            pizza.setName("New York Style Clam Pizza");
         }
         else if (type.equals("veggie"))
         {
-            return new NYStyleVeggiePizza();
+            pizza = new VeggiePizza(ingredientFactory);
+            pizza.setName("New York Style Veggie Pizza");
         }
-        else 
-        {
-            return null;
-        }
+        return pizza;
     }
     
 }

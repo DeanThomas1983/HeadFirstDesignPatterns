@@ -8,9 +8,10 @@ package chapter4_TheFactoryPattern;
  *
  * @author dean
  */
-class NYStylePepperoniPizza extends Pizza {
+class Eggplant extends Veggies
+{
 
-    public NYStylePepperoniPizza() {
+    public Eggplant() {
     }
     
 }

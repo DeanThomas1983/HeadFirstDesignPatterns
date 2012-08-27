@@ -9,28 +9,19 @@ package chapter4_TheFactoryPattern;
  * @author dean
  */
 class CheesePizza extends Pizza {
-
-    public CheesePizza() {
+    PizzaIngredientFactory ingredientFactory;
+    
+    public CheesePizza(PizzaIngredientFactory ingredientFactory) 
+    {
+        this.ingredientFactory = ingredientFactory;
     }
 
     @Override
     public void prepare() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void bake() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void cut() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void box() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println("Preparing " + name);
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
+        cheese = ingredientFactory.createCheese();
     }
     
 }
