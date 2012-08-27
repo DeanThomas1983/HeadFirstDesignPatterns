@@ -2,19 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter1_MiniDuckSimulator;
+package chapter1_IntroductionToDesignPatterns;
 
 /**
  *
  * @author dean
  */
-public class FlyRocketPowered implements FlyBehaviour
+public class Quack implements QuackBehaviour
 {
 
     @Override
-    public void fly()
+    public void quack()
     {
-        System.out.println("I'm flying with a rocket!");
+        System.out.println("Quack!");
     }
     
 }

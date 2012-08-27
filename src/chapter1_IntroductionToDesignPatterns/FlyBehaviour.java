@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter2_WeatherStation;
+package chapter1_IntroductionToDesignPatterns;
 
 /**
  *
  * @author dean
  */
-public interface DisplayElement
+public interface FlyBehaviour
 {
-    public void display();
+    public void fly();
 }

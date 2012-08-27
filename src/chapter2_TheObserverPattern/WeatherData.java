@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter2_WeatherStation;
+package chapter2_TheObserverPattern;
 
 import java.util.ArrayList;
 

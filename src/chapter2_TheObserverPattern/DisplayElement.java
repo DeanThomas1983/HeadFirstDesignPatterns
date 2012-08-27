@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package chapter1_MiniDuckSimulator;
+package chapter2_TheObserverPattern;
 
 /**
  *
  * @author dean
  */
-public interface QuackBehaviour
+public interface DisplayElement
 {
-    public void quack();
+    public void display();
 }
