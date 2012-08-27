@@ -12,5 +12,25 @@ class CheesePizza extends Pizza {
 
     public CheesePizza() {
     }
+
+    @Override
+    public void prepare() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void bake() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void cut() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void box() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }
