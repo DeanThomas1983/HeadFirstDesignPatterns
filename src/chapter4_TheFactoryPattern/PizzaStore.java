@@ -8,20 +8,20 @@ package chapter4_TheFactoryPattern;
  *
  * @author dean
  */
-public class PizzaStore 
+public abstract class PizzaStore 
 {
-    SimplePizzaFactory factory;
+    //SimplePizzaFactory factory;
     
-    public PizzaStore(SimplePizzaFactory factory)
-    {
-        this.factory = factory;
-    }
+    //public PizzaStore(SimplePizzaFactory factory)
+    //{
+    //    this.factory = factory;
+    //}
     
     public Pizza orderPizza(String type)
     {
         Pizza pizza;
         
-        pizza = factory.createPizza(type);
+        pizza = createPizza(type);
         
         pizza.prepare();
         pizza.bake();
@@ -29,4 +29,6 @@ public class PizzaStore
         pizza.box();
         return pizza;
     }
+    
+    abstract Pizza createPizza(String type);
 }
