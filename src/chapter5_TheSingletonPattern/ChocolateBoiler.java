@@ -9,57 +9,51 @@ package chapter5_TheSingletonPattern;
  * @author dean
  */
 public class ChocolateBoiler {
-    private static ChocolateBoiler uniqueInstance;
+
+    private static volatile ChocolateBoiler uniqueInstance;
     private boolean empty;
     private boolean boiled;
-    
-    public static ChocolateBoiler getInstance()
-    {
+
+    public static ChocolateBoiler getInstance() {
         if (uniqueInstance == null) 
         {
-            uniqueInstance= new ChocolateBoiler();
+            synchronized(ChocolateBoiler.class)
+            {
+                uniqueInstance = new ChocolateBoiler();
+            }
         }
         return uniqueInstance;
     }
-    
-    private ChocolateBoiler()
-    {
+
+    private ChocolateBoiler() {
         empty = false;
         boiled = false;
     }
-    
-    public void fill()
-    {
-        if (empty)
-        {
+
+    public void fill() {
+        if (empty) {
             empty = false;
             boiled = false;
         }
     }
-    
-    public void drain()
-    {
-        if (!empty && boiled)
-        {
+
+    public void drain() {
+        if (!empty && boiled) {
             empty = true;
         }
     }
-    
-    public void boil()
-    {
-        if (!empty && !boiled)
-        {
+
+    public void boil() {
+        if (!empty && !boiled) {
             boiled = true;
         }
     }
-    
-    public boolean isEmpty()
-    {
+
+    public boolean isEmpty() {
         return empty;
     }
-    
-    public boolean isBoiled()
-    {
+
+    public boolean isBoiled() {
         return boiled;
     }
 }
